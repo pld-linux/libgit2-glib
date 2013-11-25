@@ -7,13 +7,12 @@
 Summary:	GLib wrapper library around the libgit2 git access library
 Summary(pl.UTF-8):	Biblioteka obudowania GLib do biblioteki dostępu do gita libgit2
 Name:		libgit2-glib
-Version:	0.0.6
+Version:	0.0.8
 Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/libgit2-glib/0.0/%{name}-%{version}.tar.xz
-# Source0-md5:	fd37364a741a8954df419e061f402e53
-Patch0:		%{name}-pc.patch
+# Source0-md5:	203400fb752fa3da5b6315343abaa102
 URL:		https://wiki.gnome.org/Libgit2-glib
 BuildRequires:	glib2-devel >= 1:2.28.0
 BuildRequires:	gobject-introspection-devel >= 0.10.1
@@ -97,7 +96,6 @@ Wiązanie Pythona 3 do biblioteki libgit2-glib.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 %configure \
