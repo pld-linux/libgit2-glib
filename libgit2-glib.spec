@@ -7,12 +7,12 @@
 Summary:	GLib wrapper library around the libgit2 git access library
 Summary(pl.UTF-8):	Biblioteka obudowania GLib do biblioteki dostępu do gita libgit2
 Name:		libgit2-glib
-Version:	0.0.18
+Version:	0.0.20
 Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/libgit2-glib/0.0/%{name}-%{version}.tar.xz
-# Source0-md5:	8367df1dd3f281c318f377fae869c317
+# Source0-md5:	bd585f66dcb304e611139ea2eb74b8c9
 URL:		https://wiki.gnome.org/Libgit2-glib
 BuildRequires:	glib2-devel >= 1:2.28.0
 BuildRequires:	gobject-introspection-devel >= 0.10.1
@@ -22,6 +22,7 @@ BuildRequires:	pkgconfig
 BuildRequires:	python3 >= 3.2.3
 BuildRequires:	python3-pygobject3-devel >= 3.0.0
 BuildRequires:	tar >= 1:1.22
+BuildRequires:	vala
 BuildRequires:	xz
 Requires:	glib2 >= 1:2.28.0
 Requires:	libgit2 >= 0.21.0
@@ -94,6 +95,19 @@ Python 3 binding for libgit2-glib library.
 %description -n python3-libgit2-glib -l pl.UTF-8
 Wiązanie Pythona 3 do biblioteki libgit2-glib.
 
+%package -n vala-libgit2-glib
+Summary:	Vala API for libgit2-glib library
+Summary(pl.UTF-8):	API języka Vala do biblioteki libgit2-glib
+Group:		Development/Libraries
+Requires:	libgit2-glib-devel = %{version}-%{release}
+Requires:	vala
+
+%description -n vala-libgit2-glib
+Vala API for libgit2-glib library.
+
+%description -n vala-libgit2-glib -l pl.UTF-8
+API języka Vala do biblioteki libgit2-glib.
+
 %prep
 %setup -q
 
@@ -151,3 +165,8 @@ rm -rf $RPM_BUILD_ROOT
 %{py3_sitedir}/gi/overrides/Ggit.py
 %{py3_sitedir}/gi/overrides/__pycache__/Ggit.cpython-3*.py[co]
 %endif
+
+%files -n vala-libgit2-glib
+%defattr(644,root,root,755)
+%{_datadir}/vala/vapi/ggit-1.0.deps
+%{_datadir}/vala/vapi/ggit-1.0.vapi
