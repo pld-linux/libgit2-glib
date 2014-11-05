@@ -7,12 +7,12 @@
 Summary:	GLib wrapper library around the libgit2 git access library
 Summary(pl.UTF-8):	Biblioteka obudowania GLib do biblioteki dostępu do gita libgit2
 Name:		libgit2-glib
-Version:	0.0.22
-Release:	2
+Version:	0.0.24
+Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/libgit2-glib/0.0/%{name}-%{version}.tar.xz
-# Source0-md5:	83b8c453a655afa3acbb88d81cea5c3b
+# Source0-md5:	aaded43add73d27ecdc4018707df224b
 URL:		https://wiki.gnome.org/Libgit2-glib
 BuildRequires:	glib2-devel >= 1:2.28.0
 BuildRequires:	gobject-introspection-devel >= 0.10.1
