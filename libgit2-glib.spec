@@ -7,25 +7,25 @@
 Summary:	GLib wrapper library around the libgit2 git access library
 Summary(pl.UTF-8):	Biblioteka obudowania GLib do biblioteki dostępu do gita libgit2
 Name:		libgit2-glib
-Version:	0.22.8
-Release:	2
+Version:	0.23.6
+Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/libgit2-glib/0.22/%{name}-%{version}.tar.xz
-# Source0-md5:	b775250b57a7cdb65809b967e3e67a95
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/libgit2-glib/0.23/%{name}-%{version}.tar.xz
+# Source0-md5:	643dc7b45bd95f9d224c13b7c6297dfb
 URL:		https://wiki.gnome.org/Libgit2-glib
-BuildRequires:	glib2-devel >= 1:2.28.0
+BuildRequires:	glib2-devel >= 1:2.44.0
 BuildRequires:	gobject-introspection-devel >= 0.10.1
 %{?with_apidocs:BuildRequires:	gtk-doc >= 1.11}
-BuildRequires:	libgit2-devel >= 0.21.0
+BuildRequires:	libgit2-devel >= 0.23.0
 BuildRequires:	pkgconfig
 BuildRequires:	python3 >= 1:3.2.3
 BuildRequires:	python3-pygobject3-devel >= 3.0.0
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	vala
 BuildRequires:	xz
-Requires:	glib2 >= 1:2.28.0
-Requires:	libgit2 >= 0.21.0
+Requires:	glib2 >= 1:2.44.0
+Requires:	libgit2 >= 0.23.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -47,9 +47,9 @@ Summary:	Header files for libgit2-glib library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libgit2-glib
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	glib2-devel >= 1:2.28.0
+Requires:	glib2-devel >= 1:2.44.0
 Requires:	gobject-introspection-devel >= 0.10.1
-Requires:	libgit2-devel >= 0.20.0
+Requires:	libgit2-devel >= 0.23.0
 
 %description devel
 Header files for libgit2-glib library.
@@ -86,7 +86,7 @@ Summary:	Python 3 binding for libgit2-glib library
 Summary(pl.UTF-8):	Wiązanie Pythona 3 do biblioteki libgit2-glib
 Group:		Development/Languages/Python
 Requires:	%{name} = %{version}-%{release}
-Requires:	python3 >= 3.2.3
+Requires:	python3-libs >= 1:3.2.3
 Requires:	python3-pygobject3 >= 3.0.0
 
 %description -n python3-libgit2-glib
