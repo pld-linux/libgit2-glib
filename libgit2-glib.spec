@@ -7,17 +7,17 @@
 Summary:	GLib wrapper library around the libgit2 git access library
 Summary(pl.UTF-8):	Biblioteka obudowania GLib do biblioteki dostępu do gita libgit2
 Name:		libgit2-glib
-Version:	0.23.10
+Version:	0.24.0
 Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/libgit2-glib/0.23/%{name}-%{version}.tar.xz
-# Source0-md5:	12800befaf5a599be97c7b111dd84dc3
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/libgit2-glib/0.24/%{name}-%{version}.tar.xz
+# Source0-md5:	3e58a0c551e34bb19f379bd65513889f
 URL:		https://wiki.gnome.org/Libgit2-glib
 BuildRequires:	glib2-devel >= 1:2.44.0
 BuildRequires:	gobject-introspection-devel >= 0.10.1
 %{?with_apidocs:BuildRequires:	gtk-doc >= 1.11}
-BuildRequires:	libgit2-devel >= 0.23.0
+BuildRequires:	libgit2-devel >= 0.24.0
 BuildRequires:	pkgconfig
 BuildRequires:	python3 >= 1:3.2.3
 BuildRequires:	python3-pygobject3-devel >= 3.0.0
@@ -25,7 +25,7 @@ BuildRequires:	tar >= 1:1.22
 BuildRequires:	vala
 BuildRequires:	xz
 Requires:	glib2 >= 1:2.44.0
-Requires:	libgit2 >= 0.23.0
+Requires:	libgit2 >= 0.24.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -49,7 +49,7 @@ Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	glib2-devel >= 1:2.44.0
 Requires:	gobject-introspection-devel >= 0.10.1
-Requires:	libgit2-devel >= 0.23.0
+Requires:	libgit2-devel >= 0.24.0
 
 %description devel
 Header files for libgit2-glib library.
