@@ -3,12 +3,12 @@
 %bcond_without	apidocs		# API documentation
 %bcond_without	python		# Python binding
 %bcond_without	static_libs	# static library
-#
+
 Summary:	GLib wrapper library around the libgit2 git access library
 Summary(pl.UTF-8):	Biblioteka obudowania GLib do biblioteki dostępu do gita libgit2
 Name:		libgit2-glib
 Version:	0.24.0
-Release:	1
+Release:	2
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/libgit2-glib/0.24/%{name}-%{version}.tar.xz
@@ -101,6 +101,9 @@ Summary(pl.UTF-8):	API języka Vala do biblioteki libgit2-glib
 Group:		Development/Libraries
 Requires:	libgit2-glib-devel = %{version}-%{release}
 Requires:	vala
+%if "%{_rpmversion}" >= "5"
+BuildArch:	noarch
+%endif
 
 %description -n vala-libgit2-glib
 Vala API for libgit2-glib library.
