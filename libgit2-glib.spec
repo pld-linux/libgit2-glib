@@ -8,7 +8,7 @@ Summary:	GLib wrapper library around the libgit2 git access library
 Summary(pl.UTF-8):	Biblioteka obudowania GLib do biblioteki dostępu do gita libgit2
 Name:		libgit2-glib
 Version:	0.24.0
-Release:	2
+Release:	3
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/libgit2-glib/0.24/%{name}-%{version}.tar.xz
@@ -74,6 +74,9 @@ Summary:	libgit2-glib API documentation
 Summary(pl.UTF-8):	Dokumentacja API biblioteki libgit2-glib
 Group:		Documentation
 Requires:	gtk-doc-common
+%if "%{_rpmversion}" >= "5"
+BuildArch:	noarch
+%endif
 
 %description apidocs
 API documentation for libgit2-glib library.
