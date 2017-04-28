@@ -49,7 +49,7 @@ Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	glib2-devel >= 1:2.44.0
 Requires:	gobject-introspection-devel >= 0.10.1
-Requires:	libgit2-devel >= 0.24.0
+Requires:	libgit2-devel >= 0.25.0
 
 %description devel
 Header files for libgit2-glib library.
