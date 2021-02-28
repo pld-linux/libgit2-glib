@@ -65,9 +65,7 @@ Summary:	libgit2-glib API documentation
 Summary(pl.UTF-8):	Dokumentacja API biblioteki libgit2-glib
 Group:		Documentation
 Requires:	gtk-doc-common
-%if "%{_rpmversion}" >= "5"
 BuildArch:	noarch
-%endif
 
 %description apidocs
 API documentation for libgit2-glib library.
@@ -95,9 +93,7 @@ Summary(pl.UTF-8):	API języka Vala do biblioteki libgit2-glib
 Group:		Development/Libraries
 Requires:	libgit2-glib-devel = %{version}-%{release}
 Requires:	vala
-%if "%{_rpmversion}" >= "5"
 BuildArch:	noarch
-%endif
 
 %description -n vala-libgit2-glib
 Vala API for libgit2-glib library.
