@@ -6,13 +6,14 @@
 Summary:	GLib wrapper library around the libgit2 git access library
 Summary(pl.UTF-8):	Biblioteka obudowania GLib do biblioteki dostępu do gita libgit2
 Name:		libgit2-glib
-Version:	0.28.0.1
-Release:	6
+Version:	0.99.0.1
+Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/libgit2-glib/0.28/%{name}-%{version}.tar.xz
-# Source0-md5:	04c4cf24291c16406bddb5760449ab52
-Patch0:		libgit2-1.0.patch
+Source0:	https://download.gnome.org/sources/libgit2-glib/0.99/%{name}-%{version}.tar.xz
+# Source0-md5:	0507d588f149f7b002256e5e8e733156
+Patch0:		%{name}-vapi20.patch
+Patch1:		%{name}-vapi22.patch
 URL:		https://wiki.gnome.org/Libgit2-glib
 BuildRequires:	glib2-devel >= 1:2.44.0
 BuildRequires:	gobject-introspection-devel >= 0.10.1
@@ -23,6 +24,8 @@ BuildRequires:	ninja
 BuildRequires:	pkgconfig
 BuildRequires:	python3 >= 1:3.2.3
 BuildRequires:	python3-pygobject3-devel >= 3.0.0
+BuildRequires:	rpm-build >= 4.6
+BuildRequires:	rpmbuild(macros) >= 1.736
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	vala
 BuildRequires:	xz
@@ -104,12 +107,13 @@ API języka Vala do biblioteki libgit2-glib.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %meson build \
 	-Dssh=true \
 	-Dpython=true \
-	-Dgtk_doc=true
+	%{?with_apidocs:-Dgtk_doc=true}
 
 %meson_build -C build
 
