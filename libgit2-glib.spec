@@ -150,8 +150,8 @@ rm -rf $RPM_BUILD_ROOT
 %if %{with python}
 %files -n python3-libgit2-glib
 %defattr(644,root,root,755)
-%{py3_sitedir}/gi/overrides/Ggit.py
-%{py3_sitedir}/gi/overrides/__pycache__/Ggit.cpython-3*.py[co]
+%{py3_sitescriptdir}/gi/overrides/Ggit.py
+%{py3_sitescriptdir}/gi/overrides/__pycache__/Ggit.cpython-3*.py[co]
 %endif
 
 %files -n vala-libgit2-glib
