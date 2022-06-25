@@ -31,6 +31,8 @@ Requires:	glib2 >= 1:2.44.0
 Requires:	libgit2 >= 0.26.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
+%define		py3_gi_overridesdir	%{py3_sitescriptdir}/gi/overrides
+
 %description
 libgit2-glib is a glib wrapper library around the libgit2 git access
 library.
@@ -150,8 +152,8 @@ rm -rf $RPM_BUILD_ROOT
 %if %{with python}
 %files -n python3-libgit2-glib
 %defattr(644,root,root,755)
-%{py3_sitescriptdir}/gi/overrides/Ggit.py
-%{py3_sitescriptdir}/gi/overrides/__pycache__/Ggit.cpython-3*.py[co]
+%{py3_gi_overridesdir}/Ggit.py
+%{py3_gi_overridesdir}/__pycache__/Ggit.cpython-3*.py[co]
 %endif
 
 %files -n vala-libgit2-glib
