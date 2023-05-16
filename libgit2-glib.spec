@@ -6,18 +6,18 @@
 Summary:	GLib wrapper library around the libgit2 git access library
 Summary(pl.UTF-8):	Biblioteka obudowania GLib do biblioteki dostępu do gita libgit2
 Name:		libgit2-glib
-Version:	1.0.0.1
-Release:	4
+Version:	1.1.0
+Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
-Source0:	https://download.gnome.org/sources/libgit2-glib/1.0/%{name}-%{version}.tar.xz
-# Source0-md5:	d5b64b1cea56253301bcc87e3d50fb56
+Source0:	https://download.gnome.org/sources/libgit2-glib/1.1/%{name}-%{version}.tar.xz
+# Source0-md5:	bafc0fac3bb8d18621eb83eeabaf32f5
 URL:		https://wiki.gnome.org/Libgit2-glib
 BuildRequires:	glib2-devel >= 1:2.44.0
 BuildRequires:	gobject-introspection-devel >= 0.10.1
 %{?with_apidocs:BuildRequires:	gtk-doc >= 1.11}
 BuildRequires:	libgit2-devel >= 0.26.0
-BuildRequires:	meson >= 0.49.0
+BuildRequires:	meson >= 0.50.0
 BuildRequires:	ninja
 BuildRequires:	pkgconfig
 BuildRequires:	python3 >= 1:3.2.3
@@ -31,7 +31,8 @@ Requires:	glib2 >= 1:2.44.0
 Requires:	libgit2 >= 0.26.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		py3_gi_overridesdir	%{py3_sitescriptdir}/gi/overrides
+# arch-dependent due to "..module" and "..overrrides" imports
+%define		py3_gi_overridesdir	%{py3_sitedir}/gi/overrides
 
 %description
 libgit2-glib is a glib wrapper library around the libgit2 git access
