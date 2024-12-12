@@ -116,12 +116,12 @@ API języka Vala do biblioteki libgit2-glib.
 	-Dpython=true \
 	%{?with_apidocs:-Dgtk_doc=true}
 
-%meson_build -C build
+%ninja_build -C build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%meson_install -C build
+%ninja_install -C build
 
 %py3_comp $RPM_BUILD_ROOT
 %py3_ocomp $RPM_BUILD_ROOT
